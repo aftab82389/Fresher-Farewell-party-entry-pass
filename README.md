@@ -1,0 +1,1 @@
+# Fresher-Farewell-party-entry-pass
