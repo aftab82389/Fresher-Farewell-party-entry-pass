@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title></title>
+</head>
+<style type="text/css" media="all">
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    width: 100%;
+    height: 100vh;
+    background: #111;
+    color: #FFD700;
+    font-size: 15px;
+    font-family: serif;
+    text-transform: uppercase;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 3px;
+  }
+  .main{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    box-shadow: 0px 0px 10px 1px #FFC405; 
+    border: .5px solid #FFC405;
+border-radius: 5px; 
+gap:-5px;
+background: linear-gradient(to right, #000000, #1a1a1a);
+  }
+  .section {
+    width:100%;
+    display: flex;
+    justify-content: center;
+    padding: 2px;
+    background: ;
+  }
+  
+  .title {
+    animation: animate 8s linear infinite;
+    font-family: cursive, sans-serif;
+    font-size: 22px;
+    background: url('/IMG-20250720-WA0001.jpg');
+    background-position: center -1px;
+    background-size: 300px 60px;
+    background-repeat: no-repeat;
+    padding: 20px 0px;
+    height:100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  @keyframes animate {
+    0% {
+      color: #D9BFFF;
+      /* Soft Violet */
+      text-shadow:
+        0 0 5px #D9BFFF,
+        0 0 10px #C29EFF,
+        0 0 15px #A772FF,
+        0 0 20px #934BFF;
+    }
+    
+    20% {
+      color: #9EFFD8;
+      /* Minty Green */
+      text-shadow:
+        0 0 5px #9EFFD8,
+        0 0 10px #78F5C7,
+        0 0 15px #54EAB5,
+        0 0 20px #30E0A3;
+    }
+    
+    40% {
+      color: #FFF78A;
+      /* Warm Yellow */
+      text-shadow:
+        0 0 5px #FFF78A,
+        0 0 10px #FFE94E,
+        0 0 15px #FFD700,
+        0 0 20px #FFCC00;
+    }
+    
+    60% {
+      color: #FFA4E1;
+      /* Rose Pink */
+      text-shadow:
+        0 0 5px #FFA4E1,
+        0 0 10px #FF85D7,
+        0 0 15px #FF66CC,
+        0 0 20px #FF47C2;
+    }
+    
+    80% {
+      color: #7FFFD4;
+      /* Aquamarine */
+      text-shadow:
+        0 0 5px #7FFFD4,
+        0 0 10px #4FFFE2,
+        0 0 15px #1FFFEF,
+        0 0 20px #00FFF7;
+    }
+    
+    100% {
+      color: #D9BFFF;
+      text-shadow:
+        0 0 5px #D9BFFF,
+        0 0 10px #C29EFF,
+        0 0 15px #A772FF,
+        0 0 20px #934BFF;
+    }
+  }
+  
+  .left {
+    width: 58%;
+    text-align: center;
+  }
+  
+  .left h1 {
+    font-size: 19.9px;
+    text-shadow: 0px 0px 2px #FFC700,
+    0px 0px 3px #FFC700,
+    0px 0px 1px #FFC700,
+    0px 0px 2px #FFC700;
+    color:#FFFAD4;
+    line-height: 25px;
+    font-family: cursive;
+    
+  }
+  
+  .left p {
+    line-height: 20px;
+    font-size: 14px;
+    font-family: georgia;
+    text-shadow: 0px 0px 2px #FF0707,
+0px 0px 3px #FF0707,
+0px 0px 1px #FF0707,
+0px 0px 2px #FF0707;
+color:#FFBDBD;
+  }
+  
+  img {
+    object-fit: cover;
+  }
+  
+  #logo {
+    height: 100px;
+    width: 120px;
+  }
+  
+  .right {
+    line-height: 25px;
+  }
+  
+  #name {
+    font-family: 'Brush Script MT', cursive;
+    font-size: 18px;
+    text-shadow: 0px 0px 2px #42E8FF,
+    0px 0px 3px #42E8FF,
+    0px 0px 1px #42E8FF,
+    0px 0px 2px #42E8FF;
+    color:#D8FAFF;
+  }
+  
+  .preview {
+    width: 145px;
+    height: 165px;
+    padding: 10px 0px 0px 20px;
+    position: relative;
+  }
+  
+  .preview img {
+    width: 120px;
+    height: 150px;
+    object-fit: cover;
+    margin-left: -8px;
+  }
+  
+  .border {
+    width: 145px;
+    height: 165px;
+    background: url('/90d2f2d12adacbf5c84ef7e3299d3ebb-removebg-preview.png');
+    background-size: 143px 165px;
+    background-repeat: no-repeat;
+    position: absolute;
+    z-index: 1;
+    top: 50%;
+    left:52%;
+    transform: translate(-50%, -50%);
+  }
+  c,d{
+    font-family: cursive;
+    text-shadow: 0px 0px 2px #FF007B,
+0px 0px 3px #FF007B,
+0px 0px 1px #FF007B,
+0px 0px 2px #FF007B;
+color:#FFA9DB;
+  }
+e{
+text-shadow: 0px 0px 2px #031CFF,
+0px 0px 3px #031CFF,
+0px 0px 1px #031CFF,
+0px 0px 2px #031CFF;
+color:#A5B5FF;
+}
+.right h3{
+  font-family: cursive;
+  color:#F8D1FF;
+text-shadow: 0px 0px 2px #C242FF,
+0px 0px 3px #C242FF,
+0px 0px 1px #C242FF,
+0px 0px 2px #C242FF;
+}
+#passNo{
+  text-shadow: 0px 0px 2px #FF0000,
+    0px 0px 3px #FF0000,
+    0px 0px 1px #FF0000,
+    0px 0px 2px #FF0000;
+    color:#FFB7B7;
+    font-family: cursive;
+}
+span{
+  text-shadow: 0px 0px 2px #031CFF,
+    0px 0px 3px #031CFF,
+    0px 0px 1px #031CFF,
+    0px 0px 2px #031CFF;
+    color:#D8DFFF;
+    font-family: cursive;
+}
+#date{
+  text-shadow: 0px 0px 2px #031CFF,
+    0px 0px 3px #031CFF,
+    0px 0px 1px #031CFF,
+    0px 0px 2px #031CFF;
+    color:#D8DFFF;
+}
+</style>
+
+<body>
+
+  <div class="main">
+    <h1 class="title">entry pass🎉</h1>
+    <div class="section">
+    <div class="left">
+      <h1><r>Fresher & farewell</r><br>
+      <e>party</e><br>
+        <c>2025</c>
+        <d>(b.sc.)</d>
+      </h1>
+      <img src="/IMG_20250720_155455.jpg" alt="logo" id="logo">
+      <p>vindhyavasini mahavidyalaya mirzapur</p> <p id="date">27 july | 10 am</p><p id="venue">at our college hall</p>
+    </div>
+    <div class="right">
+      <div class="preview">
+        <img id="output" style="display: block;">
+        <div class="border"></div>
+      </div>
+      <h3>entry pass</h3>
+      <p id="name"></p>
+      <div>
+      <span>pass no.</span> <span id="passNo"></span>
+      </div>
+    </div>
+    </div>
+  </div>
+  <script type="module">
+  let name=document.querySelector('#name');
+  let passKey=document.querySelector('#passNo')
+    let photo=document.querySelector('#output');
+    const rollno=localStorage.getItem("Rollno");
+    const title=document.querySelector('.title');
+    passKey.innerHTML=localStorage.getItem("Pass");
+      photo.src=localStorage.getItem("src");
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/11.9.0/firebase-app.js";
+    import { getDatabase, ref, set, onValue,update} from "https://www.gstatic.com/firebasejs/11.9.0/firebase-database.js";
+    
+    const firebaseConfig = {
+      apiKey: "AIzaSyCcugiZPZnlZ9XqRW4snTbjp-_hak1BOqY",
+      authDomain: "farewell-register.firebaseapp.com",
+      databaseURL: "https://farewell-register-default-rtdb.firebaseio.com",
+      projectId: "farewell-register",
+      storageBucket: "farewell-register.appspot.com",
+      messagingSenderId: "1000923768561",
+      appId: "1:1000923768561:web:5c050e34af2de143b42b50"
+    };
+    const app = initializeApp(firebaseConfig);
+    const db = getDatabase();
+    
+    function getData() {
+  const dataRef = ref(db, "Students/" + rollno);
+  onValue(dataRef, (snapshot) => {
+    const data = snapshot.val();
+    name.innerHTML = data.Name;
+    const fullName = data.Name || "";
+    const firstName = fullName.trim().split(" ")[0];
+    title.innerHTML = "welcome " + firstName;
+  });
+  
+  update(ref(db, "Students/" + rollno), {
+    Getpass: true
+  });
+}
+      window.onload=
+      getData()
+      
+  </script>
+</body>
+
+  </html>
