@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title></title>
+  <style>
+    * {
+      padding: 0;
+      margin: 0;
+      box-sizing: border-box;
+    }
+    
+    body {
+      width: 100%;
+      height: 100vh;
+      display: grid;
+      place-items: center;
+      text-align: center;
+      background: #30004F;
+      color: #D898FF;
+    }
+    
+    .main {
+      width: 300px;
+      display: flex;
+      background: #30004F;
+      flex-direction: column;
+      gap: 10px;
+      box-shadow: inset 0px 0px 5px 2px #E1B2FF,
+        0px 0px 50px 4px #B134FF,
+        0px 0px 100px 6px #B134FF,
+        0px 0px 250px 8px #B134FF;
+      padding: 6px;
+      border-radius: 8px;
+    }
+    
+    label {
+      font-size: 20px;
+      box-shadow: inset 0px -1px 0px 0px #ABFF2D;
+      padding: 5px;
+      border-radius: 5px;
+      color: #FF2D7A;
+    }
+    
+    input {
+      outline: none;
+      border: none;
+    }
+    
+    .preview {
+      width: 145px;
+      height: 185px;
+      padding: 10px 0px 0px 20px;
+      position: relative;
+      display: none;
+    }
+    
+    .preview img {
+      width: 120px;
+      height: 150px;
+      object-fit: cover;
+      margin-left: 10px;
+    }
+    .preview p{
+      margin: 10px 0px;
+      color:#05FF28;
+      font-weight: bold;
+    }
+    .border{
+      width: 145px;
+      height: 175px;
+      background: url('/90d2f2d12adacbf5c84ef7e3299d3ebb-removebg-preview.png');
+      background-size: 143px 165px;
+      background-repeat: no-repeat;
+      position: absolute;
+      z-index: 1;
+      top:0;
+    }
+    
+    #btn {
+      font-size: 15px;
+      height: 30px;
+      outline: none;
+      border: none;
+      background: linear-gradient(45deg, #C22DFF, #2DFFEE);
+      border-radius: 5px;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="main">
+    <label for="photo">Upload your Photo</label>
+    <input type="file" id="photo" accept="image/*">
+    <div class="preview">
+      <img id="output" style="display: none;">
+      <div class="border"></div>
+      <p>Preview</p>
+    </div>
+    
+    <button type="submit" id="btn">Upload</button>
+  </div>
+  
+  <script type="module">
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/11.9.0/firebase-app.js";
+    import { getDatabase, ref, update } from "https://www.gstatic.com/firebasejs/11.9.0/firebase-database.js";
+    
+    const firebaseConfig = {
+      apiKey: "AIzaSyCcugiZPZnlZ9XqRW4snTbjp-_hak1BOqY",
+      authDomain: "farewell-register.firebaseapp.com",
+      databaseURL: "https://farewell-register-default-rtdb.firebaseio.com",
+      projectId: "farewell-register",
+      storageBucket: "farewell-register.appspot.com",
+      messagingSenderId: "1000923768561",
+      appId: "1:1000923768561:web:5c050e34af2de143b42b50"
+    };
+    
+    const app = initializeApp(firebaseConfig);
+    const db = getDatabase();
+    
+    // ✅ Fix: Use addEventListener instead of inline onchange
+    const photo = document.getElementById('photo');
+    const output = document.getElementById('output');
+    const preview =document.querySelector('.preview');
+    photo.addEventListener('change', (event) => {
+      const file = event.target.files[0];
+      if (!file) return;
+      
+      const reader = new FileReader();
+      reader.onload = function() {
+        output.src = reader.result;
+        output.style.display = 'block';
+        preview.style.display="block"
+        localStorage.setItem("src", output.src);
+      };
+      reader.readAsDataURL(file);
+    });
+    
+    // Upload button logic
+    document.getElementById('btn').addEventListener('click', () => {
+      const rollno = localStorage.getItem("Rollno");
+      const photoSrc = localStorage.getItem("src");
+      if (!output.src) {
+        alert("photo is missing!");
+        return;
+      }
+      else{
+      update(ref(db, "Students/" + rollno), {
+          Photo: photoSrc
+        })
+        .then(() => {
+          alert("✅ Uploaded successfully");
+          window.location = "pass.html";
+        })
+        .catch(err => {
+          console.error(err);
+          alert("❌ Upload failed");
+        });
+      }
+    });
+  </script>
+</body>
+
+</html>
