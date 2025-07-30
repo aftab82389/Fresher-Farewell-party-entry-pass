@@ -305,6 +305,8 @@ span{
     const fullName = data.Name || "";
     const firstName = fullName.trim().split(" ")[0];
     title.innerHTML = "welcome " + firstName;
+    passKey.innerHTML = data.Passkey;
+        photo.src = data.Photo;
   });
   
   update(ref(db, "Students/" + rollno), {
