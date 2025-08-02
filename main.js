@@ -67,10 +67,15 @@ function getData(rollno, passKey) {
 
 login.addEventListener('click', () => {
   if (rollno.value && passKey.value) {
+    if (rollno.value == "42825870117" || rollno.value=="42825870133") {
+      alert('Not Allowed in Farewell for This Roll no. ');
+    }
+    else{
     if (rollno.value.length == 11) {
       getData(rollno.value.trim(), passKey.value.trim());
     } else {
       alert('Please enter a valid roll number');
+    }
     }
   } else {
     alert('Please fill in all fields');
